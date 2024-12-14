@@ -1,0 +1,11 @@
+---
+- name: Deploy CloudFormation stack
+  hosts: localhost
+  connection: local
+  tasks:
+    - name: Create CloudFormation stack
+      cloudformation:
+        stack_name: my-multi-tier-stack
+        state: present
+        region: us-west-2
+        template: /path/to/your/cloudformation/template.yml # Other parameters as needed
